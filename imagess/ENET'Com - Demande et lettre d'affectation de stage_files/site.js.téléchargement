@@ -1,0 +1,47 @@
+var site = {
+    init: function()
+    {
+        this.social_networks.init();
+        this.banners.init();
+    },
+
+    social_networks: {
+        el: $('.sn-link'),
+        animation: 'jello',
+        init: function()
+        {
+            var that = this;
+
+            this.el.on('hover', function()
+            {
+                $(this).addClass(that.animation);
+            });
+
+            this.el.on('blur mouseleave', function()
+            {
+                $(this).removeClass(that.animation);
+            });
+        }
+    },
+
+    banners: {
+        el: $('.banner'),
+        animation: 'pulse',
+        init: function()
+        {
+            var that = this;
+
+            this.el.on('hover', function()
+            {
+                $(this).addClass(that.animation);
+            });
+
+            this.el.on('blur mouseleave', function()
+            {
+                $(this).removeClass(that.animation);
+            });
+        }
+    }
+};
+
+site.init();

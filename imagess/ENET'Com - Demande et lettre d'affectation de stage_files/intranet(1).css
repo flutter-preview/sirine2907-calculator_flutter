@@ -1,0 +1,209 @@
+body.intranet{
+    font-size:12px;
+}
+body.intranet .ease0-5 {
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+body.intranet a {
+    color:#555;
+    text-decoration: none;
+}
+
+body.intranet a:hover {
+    color:#000;
+}
+
+body.intranet .wrapper {
+    margin: 0 auto;
+    position: relative;
+}
+
+body.intranet .boxElem {
+    box-sizing: border-box;
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+
+.t20{
+    margin-top: 20px;
+}
+.t30{
+    margin-top: 30px;
+}
+
+body.intranet .flexContent{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+body.intranet .vColum{
+    display: -webkit-flex; /* Safari */
+    -webkit-flex-direction: column; /* Safari 6.1+ */
+    flex-direction: column;
+}
+
+body.intranet .flexEnd{
+    justify-content: flex-end;
+}
+
+body.intranet .page_container {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+body.intranet .wrapper {
+    /* min-width:1000px; */
+    width:100%;
+    background: #fefefe;
+    font-family: Roboto;
+    font-size: 12px;
+    color: #555;
+}
+
+body.intranet #head #header.flexContent {
+    align-items: center;
+    padding: 0 20px;
+    justify-content: space-between;
+}
+
+body.intranet #head #head-bar {
+    padding: 0 20px;
+}
+body.intranet #header{
+    margin: 10px 0;
+}
+
+body.intranet .footer {
+    padding: 0 20px;
+    background: #ffffff;
+    color: #607D8B;
+    font-size: 13px;
+    border-top: 2px solid #FF9800;
+    height: 40px;
+    padding-top: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+body.intranet #ministry_logo {
+    background: url(images/head/ministry/flag.png) no-repeat;
+    font-family: 'FoundrySterling-Medium', sans-serif;
+    font-size: 10px;
+    text-transform: uppercase;
+    line-height: 12px;
+    padding-left: 43px;
+    margin-top: 0px;
+    color: #555;
+    width: 200px;
+    flex: 2;
+}
+
+body.intranet .left_content {
+    width: 275px;
+    transition: all 0.5s ease;
+}
+
+body.intranet .right_content {
+    flex:2;
+    padding: 20px;
+}
+
+body.intranet .dpSocialBar_container{
+    display: none;
+}
+
+body.intranet .back_to_home{
+    background: #ca450e;
+    transition: all 0.5s ease;
+    border-radius: 8px;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 0.8em;
+    color: #fff;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+}
+
+body.intranet .back_to_home:hover{
+    background: #143f73;
+    color: #fff;
+}
+
+body.intranet .back_to_home a{
+    color: #fff;
+}
+
+body.intranet .right_content>.title {
+    font-family: Roboto;
+    font-size: 24px;
+    font-weight: initial;
+    color: #28343a;
+    padding-bottom: 10px;
+}
+body.intranet .intranetHeaderLeft{
+    display: flex;
+}
+body.intranet .intranetHeaderLeft .deconnexionIntranetHeader{
+    font-size: 32px;
+    background: #445c68;
+    border-radius: 50%;
+    width:  45px;
+    height:  45px;
+    text-align:  center;
+    line-height: 45px;
+    color:  #fff;
+    margin:0 10px;
+    transition:all 0.5s ease;
+}
+body.intranet .intranetHeaderLeft .deconnexionIntranetHeader i{
+    color:#fff;
+}
+body.intranet .intranetHeaderLeft .deconnexionIntranetHeader:hover{
+    background:#ca460f;
+}
+#ministry_logo{
+    background-image: url("images/flag.png") !important;
+}
+@media screen and (max-width: 1000px) {
+    body.intranet .wrapper {
+        /* min-width:1000px; */
+    }
+
+    body.intranet #head #header.flexContent {
+        justify-content: space-between;
+    }
+
+}
+
+@media screen and (max-width: 900px) {
+    body.intranet .wrapper {
+        /* min-width:1000px; */
+    }
+
+    body.intranet .left_content {
+        display: none;
+    }
+
+}
+
+@media screen and (max-width: 400px) {
+    .flexContent{
+        flex-wrap: wrap;
+    }
+}

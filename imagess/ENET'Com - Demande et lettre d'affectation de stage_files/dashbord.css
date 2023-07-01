@@ -1,0 +1,421 @@
+.CenterDasbord{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    width: 100%;
+    margin: 0 auto;
+    position: sticky;
+    z-index: 100;
+    background: url("/stylesheets/intranet/bkg-win8.jpg") repeat-x  #0a73c6;
+    background-size: cover;
+    top: 0%;
+    bottom: 0%;
+    padding: 50px;
+    box-sizing: border-box;
+}
+
+.dashbordContainerGrid {
+    display: grid;
+    grid-gap: 4px;
+    grid-template-columns: repeat(10 , minmax(100px, 1fr) );
+    grid-template-rows: repeat(3, [row] auto  );
+    color: #444;
+    position: sticky;
+    top: 0;
+}
+
+.dashbordContainerGrid .box {
+    background-color: #F5F5F5;
+    color: #607D8B;
+    padding: 20px;
+    font-size: 150%;
+    position: relative;
+    min-height: 110px;
+    transition: all 0.5s ease;
+    border: 3px solid rgba(255, 255, 255, 0.0);
+}
+
+.dashbordContainerGrid .box:hover {
+    z-index: 10;
+    border: 3px solid rgba(255, 255, 255, 0.4);
+    -webkit-transform: scale(1.05);
+    -moz-transform: scale(1.05);
+    -ms-transform: scale(1.05);
+    -o-transform: scale(1.05);
+    transform: scale(1.05);
+}
+
+.dashbordContainerGrid .a {
+    grid-column: auto / span 2;
+    grid-row: auto / span 3;
+}
+.box.hasSubLink{grid-column: span 2;}
+
+.dashbordContainerGrid ul, .dashbordContainerGrid li{
+    margin: 0;
+    padding: 0;
+}
+
+
+
+.dashbordContainerGrid .top-widget{
+    padding: 10px;
+    background: #4C4C4C;  /* fallback for old browsers */
+}
+.dashbordContainerGrid .top-widget>.down-widget{
+
+    width: calc(100% - 100px);
+
+    float: right;
+}
+.dashbordContainerGrid .down-widget li{
+    display:flex;
+}
+.dashbordContainerGrid .down-widget i{
+    color:#fff;
+    font-size:9px;
+}
+/* quick access */
+.iconWindowManager{
+    position: fixed;
+    right: 20px;
+    bottom: 25px;
+    z-index: 100;
+    display: flex;
+    direction: rtl;
+}
+
+.iconDahsboard{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: red;
+    background-image: url('/stylesheets/intranet/icons/window.png');
+    background-repeat: no-repeat;
+    background-size: 60%;
+    background-position: center center;
+}
+
+.moduleCurrent{
+    border-radius: 30px;
+    background-repeat: no-repeat;
+    background-size: 60%;
+    background-position: center center;
+    background-color: red;
+    color: #fff;
+    line-height: 40px;
+    padding: 0 16px;
+}
+
+.dashbordContainerGrid .top-widget>a{
+    font-size: 0.7em;
+    display: block;
+    font-weight: bold;
+    color:#fff;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+.dashbordContainerGrid .down-widget a{
+    font-size: 0.7em;
+    color: #fff;
+    display:block;
+    width: 100%;
+    margin-bottom:7px;
+    transition : all 0.5s ease;
+}
+.dashbordContainerGrid .down-widget a:hover{
+    color : #fff;
+}
+.dashbordContainerGrid .down-widget a:after{
+    content : ' ';
+    width:0%;
+    height:2px;
+    background:#eee0;
+    display:block;
+    transition : all 0.5s ease;
+}
+.dashbordContainerGrid .down-widget a:hover:after{
+    content : ' ';
+    width: 50px;
+    height:2px;
+    background:#FFC107;
+    display:block;
+}
+.dashbordContainerGrid top-widget{
+    background: #0a73c6;
+}
+.DashbordSubLink{
+    display: none;
+}
+body.intranet .DashbordSubLink.active{
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.DashbordSubLink{
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    background: #03a9f4e0;
+    min-height: 100vh;
+    width : 100vw;
+}
+
+.contentDashbordSub {
+    font-size: 1.2em;
+}
+.contentDashbordSub{
+    width:100%;
+}
+
+.contentDashbordSub .down-widget li {
+    max-width: 350px;
+    margin: 0 auto;
+    margin-bottom: 5px;
+    background: #ffffff;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.contentDashbordSub .down-widget li i {font-size : 12px}
+
+body.intranet .contentDashbordSub > a {
+    font-size: 2em;
+    color: #fff;
+    margin: 50px 0 40px;
+    display: block;
+    text-align: center;
+}
+
+.contentDashbordSub ul,.contentDashbordSub li {
+    margin: 0;
+    padding: 0;
+}
+
+.closeDashbordSub{
+    font-size: 2em;
+    color: #fff;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    border: 3px solid #fff;
+    border-radius: 50%;
+    margin: 0 auto;
+}
+
+.dashbordContainerGrid .iconBox{
+    height: 90px;
+    width: 90px;
+    background-size:contain;
+    background-repeat: no-repeat;
+    display: block;
+    transition : all 0.5s ease;
+}
+.dashbordContainerGrid .top-widget:hover .iconBox{
+    transform: scale(1.2);
+}
+.dashbordContainerGrid .news.top-widget{
+    background: #F29500;  /* fallback for old browsers */
+}
+.dashbordContainerGrid .news.top-widget .iconBox{background-image:url("/stylesheets/intranet/icons/news.png")}
+
+.dashbordContainerGrid .inbox.top-widget{
+    background: #3E3F3A;  /* fallback for old browsers */
+}
+.dashbordContainerGrid .inbox.top-widget .iconBox{background-image:url("/stylesheets/intranet/icons/inbox.png")}
+
+.dashbordContainerGrid .fiche.top-widget{
+    background: #3C7780;  /* fallback for old browsers */
+}
+.dashbordContainerGrid .fiche.top-widget .iconBox{background-image:url("/stylesheets/intranet/icons/fiche.png")}
+
+.dashbordContainerGrid .emploi.top-widget{
+    background: #BE213E;  /* fallback for old browsers */
+}
+.dashbordContainerGrid .emploi.top-widget .iconBox{background-image:url("/stylesheets/intranet/icons/emploi.png")}
+
+.dashbordContainerGrid .calendrier.top-widget{
+    background: #3C7780;  /* fallback for old browsers */
+}
+.dashbordContainerGrid .calendrier.top-widget .iconBox{background-image:url("/stylesheets/intranet/icons/calendrier.png")}
+
+
+.dashbordContainerGrid .institut_presence.top-widget{
+    background: #6FA014;  /* fallback for old browsers */
+}
+.dashbordContainerGrid .institut_presence.top-widget .iconBox{background-image:url("/stylesheets/intranet/icons/institut_presence.png")}
+
+
+.dashbordContainerGrid .absenses.top-widget{
+    background: #BE213E;  /* fallback for old browsers */
+}
+.dashbordContainerGrid .absenses.top-widget .iconBox{background-image:url("/stylesheets/intranet/icons/absence.png")}
+
+.dashbordContainerGrid .rattrapages.top-widget{
+    background: #94C849;  /* fallback for old browsers */
+}
+.dashbordContainerGrid .rattrapages.top-widget .iconBox{background-image:url("/stylesheets/intranet/icons/rattrapages.png")}
+
+.dashbordContainerGrid .exa.top-widget{
+    background: #0097AA;  /* fallback for old browsers */
+}
+.dashbordContainerGrid .exa.top-widget .iconBox{background-image:url("/stylesheets/intranet/icons/calendrier_examens.png")}
+
+.dashbordContainerGrid .bulletin.top-widget{
+    background: #3C7780;  /* fallback for old browsers */
+}
+.dashbordContainerGrid .bulletin.top-widget .iconBox{background-image:url("/stylesheets/intranet/icons/bulletin.png")}
+
+.dashbordContainerGrid .cours.top-widget{
+    background: #44A08D;  /* fallback for old browsers */
+}
+.dashbordContainerGrid .cours.top-widget .iconBox{background-image:url("/stylesheets/intranet/icons/courses.png")}
+
+.dashbordContainerGrid .formulaires.top-widget{
+    background: #C23916;  /* fallback for old browsers */
+}
+.dashbordContainerGrid .formulaires.top-widget .iconBox{background-image:url("/stylesheets/intranet/icons/downloading.png")}
+
+.dashbordContainerGrid .demande.top-widget{
+    background: #F29500;  /* fallback for old browsers */
+}
+.dashbordContainerGrid .demande.top-widget .iconBox{background-image:url("/stylesheets/intranet/icons/unpin.png")}
+
+.dashbordContainerGrid .institut_printing.top-widget{
+    background: #0097AA;  /* fallback for old browsers */
+}
+.dashbordContainerGrid .institut_printing.top-widget .iconBox{background-image:url("/stylesheets/intranet/icons/print.png")}
+
+.dashbordContainerGrid .institut_ressource.top-widget{
+    background: #C23916;  /* fallback for old browsers */
+}
+.dashbordContainerGrid .institut_ressource.top-widget .iconBox{background-image:url("/stylesheets/intranet/icons/institut_ressource.png")}
+
+.dashbordContainerGrid .plaquette_pedagogique.top-widget{
+    background: #3C7780;
+}
+.dashbordContainerGrid .plaquette_pedagogique.top-widget .iconBox{background-image:url("/stylesheets/intranet/icons/plaquette_pedagogique.png")}
+
+.dashbordContainerGrid .bibliotheque.top-widget{
+    background: #91009B;
+}
+.dashbordContainerGrid .bibliotheque.top-widget .iconBox{background-image:url("/stylesheets/intranet/icons/bibliotheque.png")}
+
+.dashbordContainerGrid .prop.top-widget{
+    background: #005C97;  /* fallback for old browsers */
+
+}
+.dashbordContainerGrid .prop.top-widget .iconBox{background-image:url("/stylesheets/intranet/icons/prop.png")}
+
+
+.dashbordContainerGrid .veux.top-widget{
+    background: #e0522f;
+}
+.dashbordContainerGrid .veux.top-widget .iconBox{background-image:url("/stylesheets/intranet/icons/veux_horaire.png")}
+
+.dashbordContainerGrid .stage_doc.top-widget{
+    background: #2e8bef;
+}
+.dashbordContainerGrid .stage_doc.top-widget  .iconBox{background-image:url("/stylesheets/intranet/icons/stage_doc.png");}
+
+.dashbordContainerGrid .institut_ens_annuaire.top-widget{
+    background: #10cca6;
+}
+.dashbordContainerGrid .institut_ens_annuaire.top-widget .iconBox{background-image:url("/stylesheets/intranet/icons/annuaires.png");}
+
+.dashbordContainerGrid .institut_ens_annuaire.top-widget{
+    background: #5435ae;
+}
+.dashbordContainerGrid .parametres.top-widget .iconBox{background-image:url("/stylesheets/intranet/icons/settings.png");}
+
+.dashbordContainerGrid .institut_ens_annuaire.top-widget{
+    background: #6bb61d;
+}
+.dashbordContainerGrid .logout.top-widget .iconBox{background-image: url("/stylesheets/intranet/icons/exit.png");}
+
+
+/* Groupe ENS */
+.ENS .dashbordContainerGrid .news.top-widget{ grid-column: span 2;}
+.ENS .dashbordContainerGrid .inbox.top-widget{ grid-column: span 3;}
+.ENS .dashbordContainerGrid .fiche.top-widget{ grid-column: span 2;}
+.ENS .dashbordContainerGrid .emploi.top-widget{ grid-column: span 2;}
+.ENS .dashbordContainerGrid .absenses.top-widget{  grid-column: span 2;}
+.ENS .dashbordContainerGrid .rattrapages.top-widget{ grid-column: span 2;}
+.ENS .dashbordContainerGrid .exa.top-widget{ grid-column: span 2; }
+.ENS .dashbordContainerGrid .bulletin.top-widget{ grid-column: span 2;}
+.ENS .dashbordContainerGrid .cours.top-widget{  grid-column: span 2; }
+.ENS .dashbordContainerGrid .institut_printing.top-widget{ grid-column: span 2; }
+.ENS .dashbordContainerGrid .institut_ressource.top-widget{ grid-column: span 2; }
+.ENS .dashbordContainerGrid .bibliotheque.top-widget{ grid-column: span 2; }
+.ENS .dashbordContainerGrid .veux.top-widget{ grid-column: span 2; }
+.ENS .dashbordContainerGrid .stage_doc.top-widget{  grid-column: span 6; grid-row: 4;}
+.ENS .dashbordContainerGrid .stage_doc .down-widget a{ width: 200px; }
+.ENS .dashbordContainerGrid .stage_doc.top-widget .down-widget{
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(3, minmax(100px, 1fr) );
+    margin-left: 150px;
+}
+
+/* Groupe ETU */
+.ETU .dashbordContainerGrid .news.top-widget{grid-column: span 2;}
+.ETU .dashbordContainerGrid .inbox.top-widget{grid-column: span 3;}
+.ETU .dashbordContainerGrid .bulletin.top-widget{ grid-column: span 2;}
+.ETU .dashbordContainerGrid .stages.top-widget{ grid-column: span 2;}
+.ETU .dashbordContainerGrid .bibliotheque.top-widget{ grid-column: span 2;}
+
+.ETU .dashbordContainerGrid .stage_doc.top-widget{grid-column: span 4;grid-row: 3;}
+.ETU .dashbordContainerGrid .stage_doc.top-widget .down-widget{
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(2, minmax(100px, 1fr) );
+    margin-left: 200px;
+}
+
+.GEST_STG .dashbordContainerGrid .stage_doc.top-widget{grid-column: span 6;grid-row: 3;}
+.GEST_STG .dashbordContainerGrid .stage_doc.top-widget .down-widget{
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(3, minmax(100px, 1fr) );
+    margin-left: 200px;
+}
+
+/* Less the wrapper */
+@media only screen and (max-width: 1174px) {
+    .dashbordContainerGrid {
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    }
+}
+
+@media only screen and (max-width: 980px) {
+    .dashbordContainerGrid {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+    .CenterDasbord .top-widget>.down-widget{
+        display: none !important;
+    }
+    .containerElemMenu.dashbordContainerGrid{
+        margin: 0;
+        padding: 0;
+    }
+
+    .dashbordContainerGrid .top-widget{
+        grid-column:unset !important;
+        grid-row: unset !important;
+        position:relative;
+        height:80px;
+        width: 100px;
+    }
+    .dashbordContainerGrid .top-widget .iconBox{
+        width:50px;
+    }
+
+}
+@media only screen and (max-width: 600px) {
+    .dashbordContainerGrid {
+        grid-template-columns: repeat( 3, minmax(100px, 1fr));
+    }
+}

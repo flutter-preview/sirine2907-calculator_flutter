@@ -1,0 +1,95 @@
+//Author : Melek REBAI
+//EMAIL  : melek.rebai89@gmail.com
+
+(function($) {
+    $.fn.customSelect = function(method) {
+        var args = arguments;
+    
+        var el = this;
+
+        var settings = {
+            onsubmit : null, //Callback : when the user choose an item
+        };
+
+        var customSelect = {
+            select : null,
+            trigger: null,
+            id     : null, 
+        };
+    
+    var settings = {
+    };
+    
+    var methods = {
+        init : function(options) {
+            //get settings
+            if(options) {
+                $.extend(settings, options);
+            }
+
+            fn.hideSelect();
+            fn.draw();
+
+            //Trigger bind to open and close the list
+            customSelect.trigger.on('mouseup', function(){
+                customSelect.select.toggleClass('opened');
+            });
+
+            //Select item from the list bind
+            customSelect.select.find('ul li').on('mouseup', function(event){
+                customSelect.select.find('ul li').removeClass('selected');
+                var selected = $(event.target);
+                selected.addClass('selected');
+                el.val(selected.data('value'));
+                customSelect.select.find('.custom-select-trigger').text(selected.text());
+
+                if(settings.onsubmit)
+                    settings.onsubmit(selected.data('value'), selected.text(), customSelect.select, el);
+            });
+
+            //Close the options list when click any where on the screen
+            $(document).on('mouseup', function (event) { 
+                //We have an exception for the custom select trigger so the list can be opened
+                //Because the list trigger is part of the screen
+                if($(event.target).parent()[0] != customSelect.select[0])
+                    customSelect.select.removeClass('opened');
+            });
+        }        
+    };
+    
+    var fn = {
+        hideSelect: function() {
+            el.hide();
+        },
+
+        draw: function() {
+            customSelect.id     = el.attr('id')+'-custom-select';
+            var selected = el.find(':selected');
+            var el_classes  = el.attr('class');
+
+            var customCode = '<div id="'+customSelect.id+'" class="custom-select'+(el_classes ? ' '+el_classes : '')+'">';
+                customCode += '<div class="custom-select-trigger">'+selected.text()+'</div><ul class="custom-select-options">';
+                el.find('option').each(function(index, option){
+                    option = $(option);
+                    customCode += '<li data-value="'+option.val()+'" '+(selected.attr('value') == option.val() ? 'class="selected"' : '')+'>'+option.text()+'</li>';
+                });
+                customCode += '</ul></div>';
+            el.after(customCode);
+
+            customSelect.select  = $('#'+customSelect.id);
+            customSelect.trigger = customSelect.select.find('.custom-select-trigger');
+        },
+    };
+    
+        return this.each(function() {
+            if ( methods[method] ) {
+                return methods[method].apply( el, Array.prototype.slice.call( args, 1 ));
+            } else if ( typeof method === 'object' || ! method ) {
+                return methods.init.apply( el, Array.prototype.slice.call( args, 0 ) );
+            } else {
+                $.error( 'Method ' +  method + ' does not exist on jQuery.plugin customSelect' );
+            }  
+        });
+    };
+
+})(jQuery);

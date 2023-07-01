@@ -1,0 +1,10 @@
+initialisation();
+
+
+function initialisation(){
+
+    $('.widget_menu ul:first >li').addClass('top-widget');
+    $('.widget_menu ul:first >li>ul').addClass('down-widget');
+
+
+}
